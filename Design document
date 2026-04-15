@@ -1,0 +1,43 @@
+## Program Overview
+## Explain what your program does.
+The program is a Java application that creates a 9x9 Sudoku board and turns it into a game. First, it generates a correct Sudoku solution where every row, column, and 3x3 box has the numbers 1 through 9 with no repeats. After that, it removes some numbers to make a puzzle. The user can then try to solve it by entering a row, column, and number. The program checks if the answer is correct and keeps going until the puzzle is finished or the user quits.
+
+
+Data Structures
+ Explain how you used:
+ a. the 2D array
+I used a 2D array int[][] board to store the Sudoku board. Since Sudoku is basically a grid, the 2D array makes it easy to keep track of rows and columns. Each position in the array represents one square on the board.
+
+ b. the array and/or ArrayList
+I used a simple way to generate the first row of numbers 1 through 9 with a loop. I also used another 2D array called solution to store a copy of the completed board so that the program checks the user’s answers later.
+
+Algorithm Design
+ Explain how your program generates a solved Sudoku board.
+ Describe the pattern, logic, or method you used.
+
+
+To generate the solved board, I used a shifting pattern. First, I filled the first row with the numbers 1 through 9 in order. Then, for each row, I copied the previous row and shifted the numbers to the left. Most rows are shifted by 3 positions, but every third row is shifted by 1 position instead. This pattern makes sure that all rows, columns and 3x3 subgrids contain different numbers from 1 to 9 b/c of this pattern, the board automatically meets all the rules. After making the solved board, I created the puzzle by randomly putting positions in the grid and replacing them with 0 which is the blank space. The user then fills in these blanks during the game.
+
+Methods
+ List and explain the purpose of each method.
+fillBoard() creates the Sudoku board and fills the first row and then builds the rest by copying and shifting rows. 
+copyBoard() makes a copy of the completed board and is used to keep track the correct answers so we can check the user’s guesses.
+removeNumbers() randomly removes numbers from the board to create the puzzle.
+playGame() shows the board, and asks the user for input and checks if the answer is correct, and updates the and updates the board.
+isComplete() checks if the board is finished by seeing if there are any 0s left.
+printBoard() prints the board.
+
+Testing Plan
+ Explain how you tested your program.
+ Describe at least 3 test cases or checks you used.
+
+
+The first test was the Sudoku rules and I checked that every row, column, and 3x3 box had the numbers 1 through 9 with no repeats.
+The second test was removing the numbers which I made sure that the numbers were actually being removed and replaced with blanks, and that the board looked ok.
+The last test was user input which I tested by entering correct answers, wrong answers, and trying to fill in a spot that was already filled. The program worked.
+
+Challenges and Solutions
+ Describe at least one challenge you faced and how you solved it.
+
+
+One challenge I had was figuring out how to generate a Sudoku board without just hardcoding everything. At first I thought about randomly placing numbers, but that made it really hard to make sure the board was valid. Instead, I used a pattern where I filled in the first row and then shifted the numbers for each new row. This made it a lot easier and guaranteed the board didn’t break the rules.
