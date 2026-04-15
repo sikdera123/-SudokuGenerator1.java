@@ -3,7 +3,7 @@
 The program is a Java application that creates a 9x9 Sudoku board and turns it into a game. First, it generates a correct Sudoku solution where every row, column, and 3x3 box has the numbers 1 through 9 with no repeats. After that, it removes some numbers to make a puzzle. The user can then try to solve it by entering a row, column, and number. The program checks if the answer is correct and keeps going until the puzzle is finished or the user quits.
 
 
-Data Structures
+## Data Structures
  Explain how you used:
  a. the 2D array
 I used a 2D array int[][] board to store the Sudoku board. Since Sudoku is basically a grid, the 2D array makes it easy to keep track of rows and columns. Each position in the array represents one square on the board.
